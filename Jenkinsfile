@@ -15,7 +15,7 @@ pipeline {
                     tenantIdVariable: 'ARM_TENANT_ID')]) {
                          sh """
                         echo " Terraform init"
-                        terraform init 
+                        terraform init -reconfigure
                         """
                     }
                 }
