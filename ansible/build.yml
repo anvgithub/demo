@@ -1,0 +1,8 @@
+---
+- hosts: all
+  
+  tasks:
+    - name: build image 
+      command: docker-compose -f local.docker-compose.yml build
+      args:
+          chdir: /home/anv/intermine

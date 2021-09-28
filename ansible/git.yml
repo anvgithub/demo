@@ -1,0 +1,24 @@
+---
+- hosts: all
+  
+  
+  tasks:
+
+    - name: Clone of a build branch
+      git:
+        repo: https://github.com/anvgithub/demo.git
+        clone: yes
+        update: no
+        dest: /home/anv/intermine
+        version: main
+
+    - name: Change mod mkdatadirs.sh.
+      command: chmod u+x mkdatadirs.sh
+      args:
+          chdir: /home/anv/intermine
+
+    - name:  create the volume directories which will be shared with the docker containers
+      command: ./mkdatadirs.sh local.docker-compose.yml
+      args:
+          chdir: /home/anv/intermine      
+

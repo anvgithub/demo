@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Deploy app as service
+      command: cp intermine.service /etc/systemd/system/
+      args:
+          chdir: /home/anv/intermine
+
+    - name: Start  app as service
+      command: systemctl start intermine.service
+
+    - name: Add to start up  app as service
+      command: systemctl enable intermine.service
+
+
+
+          
