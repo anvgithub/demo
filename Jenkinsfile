@@ -70,8 +70,9 @@ pipeline {
                        script {
                         env.VM_IP = sh(script:'terraform output vm_ip', returnStdout: true).trim()
                        }
-                      sh 'echo "host1 ansible_ssh_port=50001 ansible_ssh_host=$VM_IP" > /home/anv/inventory'
-                      sh 'echo "host2 ansible_ssh_port=50002 ansible_ssh_host=$VM_IP" >> /home/anv/inventory'
+                      sh 'echo "[dev]" > /home/anv/inventory'
+                      sh 'echo "dev_host1 ansible_ssh_port=50001 ansible_ssh_host=$VM_IP" >> /home/anv/inventory'
+                      sh 'echo "dev_host2 ansible_ssh_port=50002 ansible_ssh_host=$VM_IP" >> /home/anv/inventory'
                     }
                 }
                     
