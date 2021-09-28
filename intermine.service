@@ -1,0 +1,11 @@
+[Unit]
+Description=Intermine docker  service
+
+[Service]
+User=anv
+Group=docker
+ExecStart=docker-compose -f /home/anv/intermine/local.docker-compose.yml up --build --force-recreate
+
+[Install]
+WantedBy=multi-user.target
+
