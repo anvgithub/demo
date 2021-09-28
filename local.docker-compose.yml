@@ -55,7 +55,7 @@ services:
     environment:
       - MEM_OPTS=${MEM_OPTS:-"-Xmx1g -Xms500m"}
     ports:
-      - ${TOMCAT_HOST_PORT:-9999}:${TOMCAT_PORT:-8080}
+      - ${TOMCAT_HOST_PORT:-8080}:${TOMCAT_PORT:-8080}
 
 # volumes:
 #   PostgresDBData:
