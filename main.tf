@@ -24,11 +24,11 @@ provider "azurerm" {
 
 
 resource "azurerm_resource_group" "rg" {
-  name     = "Dev_stage"
-  location = "East US"
+  name     = "Prod"
+  location = "West US"
 
   tags = {
-    environment = "Dev_stage"
+    environment = "Prod"
   }
 }
 
@@ -175,6 +175,6 @@ resource "azurerm_linux_virtual_machine" "vm" {
   
 
   tags = {
-    environment = "Dev_stage"
+    environment = "Prod"
   }
 }

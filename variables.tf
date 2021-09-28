@@ -5,17 +5,17 @@ variable "rg_prefix" {
 
 variable "dns_name" {
   description = " Label for the Domain Name. Will be used to make up the FQDN."
-  default     = "myappdemo"
+  default     = "myappprod"
 }
 
 variable "lb_ip_dns_name" {
   description = "DNS for Load Balancer IP"
-  default     = "myappdemo"
+  default     = "myappprod"
 }
 
 variable "location" {
   description = "The location/region where the virtual network is created. Changing this forces a new resource to be created."
-  default     = "East US"
+  default     = "West US"
 }
 
 variable "virtual_network_name" {
