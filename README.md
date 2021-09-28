@@ -1,1 +1,1 @@
-# demo
+# LAB demo project
